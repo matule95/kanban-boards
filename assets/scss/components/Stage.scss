@@ -1,0 +1,114 @@
+@import '../mixins.scss';
+
+.stage {
+  @include element('wrapper') {
+    width: 360px;
+    min-height: 80px;
+    max-height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e0e7ff;
+    box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, 0.1), 0 0 0 1px #f0f2f7;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include element('title') {
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+    @include element('body') {
+      padding-left: 22px;
+      padding-right: 22px;
+      // overflow-y: auto;
+      // overflow-x: hidden;
+      max-height: 80vh;
+    //   &:before {
+    //     content: '';
+    //     width: 360px;
+    //     height: calc(100% - 75%);
+    //     // max-height: calc(100% - 85%);
+    //     position: absolute;
+    //     left: 15px;
+    //     bottom: 0;
+    //     background: linear-gradient(rgba(0, 151, 141, 0) 0%, #ffffff 100%)
+    //       no-repeat 50% 50% / 100% 100%;
+    //     z-index: 1;
+    //   }
+    }
+  }
+  @include element('item') {
+    border: 1px solid #e0e7ff;
+    box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, 0.1), 0 0 0 1px #f0f2f7;
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    min-height: 110px;
+    cursor: pointer;
+    &:last-child {
+        margin-bottom: 50px;
+    }
+    @include element('image') {
+      img {
+        position: relative;
+        left: -12px;
+        top: -12px;
+        width: calc(100% + 24px);
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+    @include element('tags') {
+      .badge {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 14px;
+        padding-right: 14px;
+        font-size: 10px;
+      }
+    }
+    @include element('title') {
+      font-size: 13px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 17px;
+      font-weight: 500;
+    }
+    @include element('details') {
+      width: 100%;
+      @include element('checks') {
+        font-size: 14px;
+        color: #8798ad;
+      }
+      @include element('comments') {
+        text-align: right;
+        font-size: 14px;
+        color: #8798ad;
+      }
+      @include element('assignee') {
+      }
+    }
+    @include element('progress-bar') {
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      background-color: #f2f4f6;
+
+      @include element('progress') {
+        position: absolute;
+        width: 10%;
+        height: 5px;
+        bottom: 0;
+        left: 0;
+        background-color: #0bd455;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        z-index: 2;
+      }
+    }
+  }
+}

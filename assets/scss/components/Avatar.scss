@@ -1,0 +1,46 @@
+@import '../mixins.scss';
+.avatar {
+  @include element('wrapper') {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, 0.1), 0 0 0 1px #f0f2f7;
+
+    &--editable {
+      cursor: pointer;
+    }
+
+    @include element('img') {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      min-height: 100%;
+      min-width: 100%;
+      max-height: 100%;
+    }
+  }
+  @include element('size') {
+    @include modifier('sm') {
+      width: 24px;
+      height: 24px;
+    }
+    @include modifier('md') {
+      width: 36px;
+      height: 36px;
+    }
+    @include modifier('lg') {
+      width: 60px;
+      height: 60px;
+    }
+    @include modifier('xl') {
+      width: 120px;
+      height: 120px;
+    }
+    @include modifier('xxl') {
+      width: 164px;
+      height: 164px;
+    }
+  }
+}
