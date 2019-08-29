@@ -10,10 +10,10 @@
     <div class="stage__item__title">{{ item.title }}</div>
     <b-row class="stage__item__details" no-gutters>
       <b-col class="stage__item__details__checks">
-        <img src="~/static/icon tasks.svg" /> 8/10
+        <img src="~/static/icons/tasks.svg" /> 8/10
       </b-col>
       <b-col class="stage__item__details__comments">
-        <img src="~/static/comments.svg" /> 15
+        <img src="~/static/icons/comments.svg" /> 15
       </b-col>
       <b-col class="stage__item__details__avatar text-center" lg="2">
         <avatar size="sm"></avatar>

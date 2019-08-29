@@ -1,5 +1,29 @@
-@import "./bootstrap_override.scss";
+@import './variables.scss';
+@import './bootstrap_override.scss';
 @import '~bootstrap/scss/bootstrap.scss';
+@import './mixins.scss';
 body {
   background-color: #f4f6fc;
+}
+
+.app {
+  position: relative;
+  @include element('west') {
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $app-nav-expanded-width;
+    border-right: 1px solid $mystic;
+    z-index: 20;
+    transition: transform ease 0.5s;
+    width: 5rem;
+    @include element('avatar-info') {
+      color: inherit;
+    }
+  }
+  @include element('east') {
+    margin-left: 5rem;
+  }
 }

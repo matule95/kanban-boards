@@ -1,44 +1,44 @@
 <template>
-  <b-container fluid>
-    <b-row>
-      <b-col v-for="stage in stages" :key="stage.name" lg="3">
-        <stage :title="stage.name">
-          <draggable
-            class="list-group"
-            :list="stage.items"
-            group="items"
-            v-bind="dragOptions"
-            @start="drag = true"
-            @end="drag = false"
+  <page title="Sprint AGOSTO 12-17" fluid :card="false">
+    <div class="d-flex">
+      <stage v-for="stage in stages" :key="stage.name" :title="stage.name">
+        <draggable
+          class="list-group"
+          :list="stage.items"
+          group="items"
+          v-bind="dragOptions"
+          @start="drag = true"
+          @end="drag = false"
+        >
+          <transition-group
+            type="transition"
+            :name="!drag ? 'flip-list' : null"
           >
-            <transition-group
-              type="transition"
-              :name="!drag ? 'flip-list' : null"
-            >
-              <stage-item
-                v-for="todo in stage.items"
-                :key="todo.title"
-                class="list-group-item"
-                :item="todo"
-                @click.native="$emit('stage-item-click', todo)"
-              ></stage-item>
-            </transition-group>
-          </draggable>
-        </stage>
-      </b-col>
-    </b-row>
-  </b-container>
+            <stage-item
+              v-for="todo in stage.items"
+              :key="todo.title"
+              class="list-group-item"
+              :item="todo"
+              @click.native="$emit('stage-item-click', todo)"
+            ></stage-item>
+          </transition-group>
+        </draggable>
+      </stage>
+    </div>
+  </page>
 </template>
 
 <script>
 import draggable from 'vuedraggable'
 import Stage from '~/components/Stage'
 import StageItem from '~/components/StageItem'
+import Page from '~/components/Page'
 export default {
   components: {
     Stage,
     StageItem,
-    draggable
+    draggable,
+    Page
   },
   data: () => ({
     stages: [
@@ -99,6 +99,33 @@ export default {
             progress: 100
           }
         ]
+      },
+      {
+        name: 'QA',
+        id: 'qualityassurance',
+        items: [
+          {
+            title: 'Avaliação de Desempenho',
+            image: false,
+            progress: 20
+          }
+        ]
+      },
+      {
+        name: 'Done',
+        id: 'Done',
+        items: [
+          {
+            title: 'Done Task 1',
+            image: false,
+            progress: 100
+          },
+          {
+            title: 'Done Task 2',
+            image: true,
+            progress: 100
+          }
+        ]
       }
     ],
     drag: false
@@ -117,7 +144,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .flip-list-move {
   transition: transform 0.5s;
 }
