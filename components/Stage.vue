@@ -9,6 +9,9 @@
           <slot />
         </div>
       </perfect-scrollbar>
+      <div class="stage__wrapper__footer">
+        <b-button variant="outline-secondary" block>ADD CARD</b-button>
+      </div>
     </div>
   </div>
 </template>
@@ -28,7 +31,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '~assets/scss/components/Stage.scss';
+.btn {
+  border-style: dashed;
+  border-color: #e8ecef;
+  &:hover {
+    border-style: solid;
+  }
+}
 </style>
 <style src="vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css" />

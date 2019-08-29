@@ -1,0 +1,19 @@
+@import '../variables.scss';
+.floating-button {
+  .floating-button__wrapper {
+    position: fixed;
+    width: 76px;
+    height: 76px;
+    bottom: 15px;
+    right: calc(10vw - 40px);
+    background-color: $blueRibbon;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px $blueRibbon;
+    &:hover {
+      cursor: pointer;
+      background-color: darken($blueRibbon, 10%);
+    }
+  }
+}

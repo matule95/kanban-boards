@@ -1,5 +1,8 @@
 <template>
-  <div class="app-page mb-5 mt-4" :class="{ 'app-page--non-fluid': !fluid }">
+  <div
+    class="app-page mb-5 mt-5 ml-5"
+    :class="{ 'app-page--non-fluid': !fluid }"
+  >
     <div class="app-page__header">
       <h3 class="app-page__header__title">{{ title }}</h3>
       <div class="app-page__actions">

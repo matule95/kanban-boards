@@ -1,0 +1,115 @@
+{
+  "stages": [
+    {
+      "name": "Todo",
+      "id": "todo",
+      "items": [
+        {
+          "title": "[FRONT] Validar campos 2",
+          "image": false,
+          "progress": 90
+        },
+        {
+          "title": "Ao preencher pessoas de contacto no campo de telefone deve selecionar o pais para aparecer prefixo e espaço para outras informações.",
+          "image": true,
+          "progress": 10
+        },
+        {
+          "title": "Fazer Dashboard (admin e técnico) 2",
+          "image": false,
+          "progress": 20
+        },
+        {
+          "title": "Desenhar tela de criação e alocação de tarefas 2",
+          "image": false,
+          "progress": 15
+        }
+      ]
+    },
+    {
+      "name": "In Progress",
+      "id": "inprogress",
+      "items": [
+        {
+          "title": "[FRONT] Validar campos",
+          "image": false,
+          "progress": 20
+        },
+        {
+          "title": "[FRONT] Tela de Criação de Tarefas",
+          "image": true,
+          "progress": 55
+        },
+        {
+          "title": "Criar secções para step 3 de homologação",
+          "image": false,
+          "progress": 70
+        },
+        {
+          "title": "Adicionar \"Outros Processos\" ao sidebar",
+          "image": false,
+          "progress": 10
+        },
+        {
+          "title": "Implementar Gráficos no Dashboard",
+          "image": false,
+          "progress": 100
+        }
+      ]
+    },
+    {
+      "name": "QA",
+      "id": "qualityassurance",
+      "items": [
+        {
+          "title": "Avaliação de Desempenho",
+          "image": false,
+          "progress": 20
+        }
+      ]
+    },
+    {
+      "name": "Ready to Ship",
+      "id": "readyship",
+      "items": [
+        {
+          "title": "Deploy Aplicativo Roman Cream",
+          "image": false,
+          "progress": 75
+        }
+      ]
+    },
+    {
+      "name": "Done",
+      "id": "Done",
+      "items": [
+        {
+          "title": "Done Task 1",
+          "image": false,
+          "progress": 100
+        },
+        {
+          "title": "Done Task 2",
+          "image": true,
+          "progress": 100
+        }
+      ]
+    },
+    {
+      "name": "Other Board",
+      "id": "board",
+      "items": [
+        {
+          "title": "Done Task 1",
+          "image": false,
+          "progress": 100
+        },
+        {
+          "title": "Done Task 2",
+          "image": true,
+          "progress": 100
+        }
+      ]
+    }
+  ]
+}

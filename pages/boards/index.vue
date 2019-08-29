@@ -1,133 +1,65 @@
 <template>
   <page title="Sprint AGOSTO 12-17" fluid :card="false">
-    <div class="d-flex">
-      <stage v-for="stage in stages" :key="stage.name" :title="stage.name">
-        <draggable
-          class="list-group"
-          :list="stage.items"
-          group="items"
-          v-bind="dragOptions"
-          @start="drag = true"
-          @end="drag = false"
-        >
-          <transition-group
-            type="transition"
-            :name="!drag ? 'flip-list' : null"
-          >
-            <stage-item
-              v-for="todo in stage.items"
-              :key="todo.title"
-              class="list-group-item"
-              :item="todo"
-              @click.native="$emit('stage-item-click', todo)"
-            ></stage-item>
-          </transition-group>
-        </draggable>
-      </stage>
-    </div>
+    <b-container fluid>
+      <b-row>
+        <b-col class="p-0" md="12">
+          <span class="text-muted"></span>
+        </b-col>
+        <perfect-scrollbar>
+          <b-col class="p-0 d-flex mb-5" md="12">
+            <stage
+              v-for="stage in stages"
+              :key="stage.name"
+              :title="stage.name"
+            >
+              <draggable
+                class="list-group"
+                :list="stage.items"
+                group="items"
+                v-bind="dragOptions"
+                @start="drag = true"
+                @end="drag = false"
+              >
+                <transition-group
+                  type="transition"
+                  :name="!drag ? 'flip-list' : null"
+                >
+                  <stage-item
+                    v-for="todo in stage.items"
+                    :key="todo.title"
+                    class="list-group-item"
+                    :item="todo"
+                    @click.native="$emit('stage-item-click', todo)"
+                  ></stage-item>
+                </transition-group>
+              </draggable>
+            </stage>
+          </b-col>
+        </perfect-scrollbar>
+      </b-row>
+      <floating-button></floating-button>
+    </b-container>
   </page>
 </template>
 
 <script>
 import draggable from 'vuedraggable'
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import Stage from '~/components/Stage'
 import StageItem from '~/components/StageItem'
 import Page from '~/components/Page'
+import FloatingButton from '~/components/FloatingButton'
+import { apiDataToStateObject } from '~/utils'
 export default {
   components: {
     Stage,
     StageItem,
     draggable,
-    Page
+    Page,
+    PerfectScrollbar,
+    FloatingButton
   },
   data: () => ({
-    stages: [
-      {
-        name: 'Todo',
-        id: 'todo',
-        items: [
-          {
-            title: '[FRONT] Validar campos 2',
-            image: false,
-            progress: 90
-          },
-          {
-            title:
-              'Ao preencher pessoas de contacto no campo de telefone deve selecionar o pais para aparecer prefixo e espaço para outras informações.',
-            image: true,
-            progress: 10
-          },
-          {
-            title: 'Fazer Dashboard (admin e técnico) 2',
-            image: false,
-            progress: 20
-          },
-          {
-            title: 'Desenhar tela de criação e alocação de tarefas 2',
-            image: false,
-            progress: 15
-          }
-        ]
-      },
-      {
-        name: 'In Progress',
-        id: 'inprogress',
-        items: [
-          {
-            title: '[FRONT] Validar campos',
-            image: false,
-            progress: 20
-          },
-          {
-            title: '[FRONT] Tela de Criação de Tarefas',
-            image: true,
-            progress: 55
-          },
-          {
-            title: 'Criar secções para step 3 de homologação',
-            image: false,
-            progress: 70
-          },
-          {
-            title: 'Adicionar "Outros Processos" ao sidebar',
-            image: false,
-            progress: 10
-          },
-          {
-            title: 'Implementar Gráficos no Dashboard',
-            image: false,
-            progress: 100
-          }
-        ]
-      },
-      {
-        name: 'QA',
-        id: 'qualityassurance',
-        items: [
-          {
-            title: 'Avaliação de Desempenho',
-            image: false,
-            progress: 20
-          }
-        ]
-      },
-      {
-        name: 'Done',
-        id: 'Done',
-        items: [
-          {
-            title: 'Done Task 1',
-            image: false,
-            progress: 100
-          },
-          {
-            title: 'Done Task 2',
-            image: true,
-            progress: 100
-          }
-        ]
-      }
-    ],
     drag: false
   }),
   computed: {
@@ -139,6 +71,9 @@ export default {
         ghostClass: 'ghost',
         easing: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       }
+    },
+    stages() {
+      return apiDataToStateObject(require('~/utils/data').stages)
     }
   }
 }
@@ -146,7 +81,7 @@ export default {
 
 <style scoped>
 .flip-list-move {
-  transition: transform 0.5s;
+  transition: transform 0.25s;
 }
 .no-move {
   transition: transform 0s;
