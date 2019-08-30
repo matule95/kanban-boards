@@ -4,7 +4,7 @@
     :class="{ 'app-page--non-fluid': !fluid }"
   >
     <div class="app-page__header">
-      <h3 class="app-page__header__title">{{ title }}</h3>
+      <h4 class="app-page__header__title">{{ title }}</h4>
       <div class="app-page__actions">
         <slot name="actions" />
       </div>
@@ -39,7 +39,7 @@ export default {
   }
   @include element('header') {
     @include clearfix;
-    padding-bottom: 1.562rem;
+    padding-bottom: 0.7rem;
 
     @include element('title') {
       float: left;

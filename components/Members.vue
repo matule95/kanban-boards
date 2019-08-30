@@ -28,12 +28,14 @@
             <b-col md="12" class="p-0 d-flex">
               <b-col class="p-0 text-center" md="6">
                 <span class="font-weight-bold text-primary">
-                  <icon icon="book-open"></icon> Board
+                  <icon icon="book-open"></icon>
+                  <span class="small font-weight-bold">Board</span>
                 </span>
               </b-col>
               <b-col class="p-0 text-center" md="6">
                 <span class="text-muted">
-                  <icon icon="tasks"></icon> List
+                  <icon icon="tasks"></icon>
+                  <span class="small font-weight-bold">List</span>
                 </span>
               </b-col>
             </b-col>

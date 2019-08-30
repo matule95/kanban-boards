@@ -2,6 +2,15 @@
   <page title="Sprint AGOSTO 12-17" fluid :card="false">
     <b-container fluid>
       <b-row>
+        <b-col class="p-0 mb-3" md="12">
+          <icon icon="inbox" class="text-muted"></icon>
+          <span class="text-muted text-uppercase font-weight-bold small"
+            >Projecto:</span
+          >
+          <span class="font-weight-bold small">
+            INCM - Portal Externo
+          </span>
+        </b-col>
         <b-col class="p-0 mb-2" md="12">
           <members />
         </b-col>
@@ -51,6 +60,7 @@ import Page from '~/components/Page'
 import Members from '~/components/Members'
 import FloatingButton from '~/components/FloatingButton'
 import { apiDataToStateObject } from '~/utils'
+import Icon from '~/components/Icon'
 export default {
   components: {
     Stage,
@@ -59,7 +69,8 @@ export default {
     Page,
     PerfectScrollbar,
     FloatingButton,
-    Members
+    Members,
+    Icon
   },
   data: () => ({
     drag: false

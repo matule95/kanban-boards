@@ -1,8 +1,13 @@
 <template>
   <div class="stage">
     <div class="stage__wrapper">
-      <div class="stage__wrapper__title">
-        {{ title }}
+      <div class="stage__wrapper__header">
+        <div class="stage__wrapper__header__title">
+          {{ title }}
+        </div>
+        <div class="stage__wrapper__header__options">
+          <icon icon="more-outline" />
+        </div>
       </div>
       <perfect-scrollbar>
         <div class="stage__wrapper__body">
@@ -18,9 +23,11 @@
 
 <script>
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
+import Icon from '~/components/Icon'
 export default {
   components: {
-    PerfectScrollbar
+    PerfectScrollbar,
+    Icon
   },
   props: {
     title: {
