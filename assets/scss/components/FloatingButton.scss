@@ -11,6 +11,11 @@
     border-radius: 50px;
     text-align: center;
     box-shadow: 2px 2px 3px $blueRibbon;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
     &:hover {
       cursor: pointer;
       background-color: darken($blueRibbon, 10%);

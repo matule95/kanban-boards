@@ -10,10 +10,10 @@
     <div class="stage__item__title">{{ item.title }}</div>
     <b-row class="stage__item__details" no-gutters>
       <b-col class="stage__item__details__checks">
-        <img src="~/static/icons/tasks.svg" /> 8/10
+        <icon icon="tasks" /> 8/10
       </b-col>
       <b-col class="stage__item__details__comments">
-        <img src="~/static/icons/comments.svg" /> 15
+        <icon icon="message" /> 15
       </b-col>
       <b-col class="stage__item__details__avatar text-center" lg="2">
         <avatar size="sm"></avatar>
@@ -30,9 +30,11 @@
 
 <script>
 import Avatar from './Avatar'
+import Icon from '~/components/Icon'
 export default {
   components: {
-    Avatar
+    Avatar,
+    Icon
   },
   props: {
     item: {

@@ -1,9 +1,10 @@
 @import '../mixins.scss';
+@import '../variables.scss';
 
 .stage {
   display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: $stage-margin;
+  margin-right: $stage-margin;
   &:nth-child(1) {
     margin-left: 0;
   }
@@ -25,7 +26,7 @@
     @include element('body') {
       padding-left: 22px;
       padding-right: 22px;
-      max-height: 55vh;
+      max-height: 50vh;
       //   &:before {
       //     content: '';
       //     width: 360px;

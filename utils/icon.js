@@ -16,7 +16,7 @@ export const objectGet = (path, obj, defaultVal = null) => {
 
 export async function fetchIcon(icon) {
   if (isCached(icon)) return getCached(icon)
-  const { data } = await $http.get(`/assets/icons/${icon}.svg`)
+  const { data } = await $http.get(`/icons/${icon}.svg`)
   cache[icon] = data
   return data
 }

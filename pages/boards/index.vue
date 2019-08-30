@@ -2,8 +2,8 @@
   <page title="Sprint AGOSTO 12-17" fluid :card="false">
     <b-container fluid>
       <b-row>
-        <b-col class="p-0" md="12">
-          <span class="text-muted"></span>
+        <b-col class="p-0 mb-2" md="12">
+          <members />
         </b-col>
         <perfect-scrollbar>
           <b-col class="p-0 d-flex mb-5" md="12">
@@ -48,6 +48,7 @@ import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import Stage from '~/components/Stage'
 import StageItem from '~/components/StageItem'
 import Page from '~/components/Page'
+import Members from '~/components/Members'
 import FloatingButton from '~/components/FloatingButton'
 import { apiDataToStateObject } from '~/utils'
 export default {
@@ -57,7 +58,8 @@ export default {
     draggable,
     Page,
     PerfectScrollbar,
-    FloatingButton
+    FloatingButton,
+    Members
   },
   data: () => ({
     drag: false

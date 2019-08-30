@@ -5,7 +5,10 @@
       class="text-center text-muted toggle mt-4 mb-5"
       @click.native="toggleSidebar()"
     />
-    <nav-item icon="file" :to="{ name: 'boards' }" :label-visibility="expanded"
+    <nav-item
+      icon="book-open"
+      :to="{ name: 'boards' }"
+      :label-visibility="expanded"
       >Contractos</nav-item
     >
   </nav>

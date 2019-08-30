@@ -1,13 +1,18 @@
 <template>
   <div class="floating-button">
     <span class="floating-button__wrapper">
-      <img src="~/static/icons/plus-circle.svg" />
+      <icon icon="plus-circle" />
     </span>
   </div>
 </template>
 
 <script>
-export default {}
+import Icon from '~/components/Icon'
+export default {
+  components: {
+    Icon
+  }
+}
 </script>
 
 <style lang="scss" scoped>
